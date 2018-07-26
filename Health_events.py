@@ -1,5 +1,6 @@
 import boto3
 import pprint
+import json
 
 event = []
 
@@ -21,5 +22,9 @@ for events in health_events['events']:
                       f"aws_region: {event_details['successfulSet'][0]['event']['region']}",
                       f"start_time: {event_details['successfulSet'][0]['event']['startTime']}"))
 
+#event_json = json.dumps(event)
+#pprint.pprint(event_json)
+
 pprint.pprint(event)
+
 
